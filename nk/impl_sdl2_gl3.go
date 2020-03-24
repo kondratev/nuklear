@@ -122,7 +122,7 @@ func NkPlatformRender(aa AntiAliasing, maxVertexBuffer, maxElementBuffer int) {
 		})
 		vbuf.Free()
 		ebuf.Free()
-		// config.Free()
+		config.Free()
 		NkBufferClear(dev.cmds)
 		NkClear(state.ctx)
 	}
