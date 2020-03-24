@@ -123,7 +123,7 @@ func NkPlatformRender(aa AntiAliasing, maxVertexBuffer, maxElementBuffer int) {
 			gl.DrawElements(gl.TRIANGLES, int32(elemCount), gl.UNSIGNED_SHORT, unsafe.Pointer(offset))
 			offset += uintptr(elemCount) * sizeofDrawIndex
 		})
-
+		NkBufferClear(dev.cmds)
 		NkClear(state.ctx)
 	}
 

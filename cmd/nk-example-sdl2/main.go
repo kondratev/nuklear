@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/go-gl/gl/v3.2-core/gl"
-	"github.com/golang-ui/nuklear/nk"
+	"github.com/kondratev/nuklear/nk"
 	"github.com/veandco/go-sdl2/sdl"
 	"github.com/xlab/closer"
 )
