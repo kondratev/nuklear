@@ -97,9 +97,6 @@ func NkPlatformRender(aa AntiAliasing, maxVertexBuffer, maxElementBuffer int) {
 		NkBufferInitFixed(vbuf, vertices, Size(maxVertexBuffer))
 		NkBufferInitFixed(ebuf, elements, Size(maxElementBuffer))
 		NkConvert(state.ctx, dev.cmds, vbuf, ebuf, config)
-		// vbuf.Free()
-		// ebuf.Free()
-		// config.Free()
 
 		gl.UnmapBuffer(gl.ARRAY_BUFFER)
 		gl.UnmapBuffer(gl.ELEMENT_ARRAY_BUFFER)
@@ -123,6 +120,9 @@ func NkPlatformRender(aa AntiAliasing, maxVertexBuffer, maxElementBuffer int) {
 			gl.DrawElements(gl.TRIANGLES, int32(elemCount), gl.UNSIGNED_SHORT, unsafe.Pointer(offset))
 			offset += uintptr(elemCount) * sizeofDrawIndex
 		})
+		vbuf.Free()
+		ebuf.Free()
+		// config.Free()
 		NkBufferClear(dev.cmds)
 		NkClear(state.ctx)
 	}
