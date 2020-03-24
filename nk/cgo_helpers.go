@@ -4338,7 +4338,8 @@ func unpackSDrawVertexLayoutElement(x []DrawVertexLayoutElement) (unpacked *C.st
 	}
 	v0 := *(*[]C.struct_nk_draw_vertex_layout_element)(unsafe.Pointer(h0))
 	for i0 := range x {
-		allocs0 := new(cgoAllocMap)
+//		allocs0 := new(cgoAllocMap)
+		allocs0 := *cgoAllocMap
 		v0[i0], allocs0 = x[i0].PassValue()
 		allocs.Borrow(allocs0)
 	}
